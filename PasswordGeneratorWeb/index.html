@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="shield.png" />
+  <title>MDP Aléatoire</title>
+  <script src="davidshimjs-qrcodejs-04f46c6\qrcode.js"></script>
+  <script src="FileSaver.js"></script>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+        }
+         li a:hover:not(.active) {
+                    background-color: #111;
+                }
+        .active {
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        
+        <h1 class="title">Générer un mot de passe Aléatoire</h1>
+        <div id="PWDField">
+            <label for="passwordDisplay">Mot de passe</label>
+            <input type="text" class="password-display" id="passwordDisplay"></input>
+        </div>
+        <div id="MoreFunc">
+            <label for="togglepwdcheck">Show/Hide</label>
+            <input type="checkbox" id="togglepwdcheck" onclick="TogglePWD()">
+            <button onclick="COPYClipBoard()">Copier MDP</button>
+        </div>
+        <form id="passwordGeneratorForm" class="form">
+            <label for="characterAmountNumber">Nombre de caractères</label>
+            <div class="character-amount-container">
+                <input type="range" min="8" max="99" value="10" id="characterAmountRange">
+                <input class="number-input" type="number" min="8" max="99" value="10" id="characterAmountNumber">
+            </div>
+            <label for="includeUppercase">Inclure des majuscules</label>
+            <input type="checkbox" id="includeUppercase" checked>
+            <label for="includeNumbers">Inclure des nombres</label>
+            <input type="checkbox" id="includeNumbers" checked>
+            <label for="includeSymbols">Inclure des symboles</label>
+            <input type="checkbox" id="includeSymbols" checked>
+
+            <label for="encryptedPassword">Le Mot de passe Crypté</label>
+            <input type="text" id="encryptedPassword">
+
+            <label for="decryptedPassword">le Mot de passe décrypté</label>
+            <input type="text" id="decryptedPassword">
+            <input type="reset" id="reset" value="Clear">
+
+            <button type="submit" class="btn">Générer Mot de Passe</button>
+            <button type="button" id="GenQrcodeBtn" class="btn">Générer qrcode</button>
+            <button type="button" id="EncryptBtn" class="btn">Crypter le Mot de Passe</button>
+            <button type="button" id="DecryptBtn" class="btn">Décrypter le Mot de Passe</button>
+            <button type="button" id="SaveFileBtn" class="btn">Sauvegarder MDP dans un Fichier</button>
+            <div id="qrcode"></div>
+        </form>
+
+    </div>
+
+</body>
+
+
+<script src="qrcode.js"></script>
+<script src="FileBeingSaved.js"></script>
+<script src="GenQrCode.js"></script>
+<script src="Utilities.js"></script>
+<script src="Encryption.js"></script>
+<script src="Decryption.js"></script>
+
+</html>

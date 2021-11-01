@@ -17,8 +17,6 @@ A password generator that provides secure passwords for the average users.
 - Turn Generated Password into QR Code.
 - Save Generated Password to .txt file.
 
-## Implementation
-Was hosted on Github Pages: 
 
 ## Future Steps
 - Make Website Responsive
